@@ -10,15 +10,15 @@ package Deliverable2;
  * @author davidzhang
  */
 public class Validator {
-    
-     public boolean validateArguments(String[] inputArray) {
+
+    public boolean validateArguments(String[] inputArray) {
         return validateNumberOfArguments(inputArray) && validateArgumentType(inputArray);
     }
-    
+
     public boolean validateNumberOfArguments(String[] inputArray) {
         return inputArray.length == 3;
     }
-    
+
     public boolean validateArgumentType(String[] inputArray) {
         try {
             Integer.parseInt(inputArray[2]);
@@ -27,5 +27,5 @@ public class Validator {
             return false;
         }
     }
-    
+
 }

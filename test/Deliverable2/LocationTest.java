@@ -5,10 +5,6 @@
  */
 package Deliverable2;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,38 +13,18 @@ import static org.junit.Assert.*;
  * @author davidzhang
  */
 public class LocationTest {
-    
-    public LocationTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    
 
     /**
-     * Test of getRandomLocation method, of class Location.
+     * Test of getRandomLocation method, of class Location. To check if the
+     * random location is contained in the expected result;
      */
     @Test
-    public void testIfRandomLocationComesFromGivenLocations() {
-        System.out.println("getRandomLocation");
+    public void testIfResultComesFromGivenLocations() {
+
         Location instance = new Location();
         String expResult = "The Cathedral of Learning, Squirrel Hill, The Point, Downtown, Leave";
         String result = instance.getRandomLocation();
         assertTrue(expResult.contains(result));
     }
-    
+
 }

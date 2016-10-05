@@ -5,63 +5,41 @@
  */
 package Deliverable2;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 
 /**
  *
  * @author davidzhang
  */
 public class VisitorTest {
-    
-    public VisitorTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of getVisitorType method, of class Visitor.
+     * To test when the argument starts with 1, the visitor should be a student.
      */
     @Test
     public void testGetVisitorType() {
         System.out.println("getVisitorType");
-        Visitor instance = null;
-        String expResult = "Student";
-        
-        String result = instance.getVisitorType();
-        assertEquals(expResult, result);
-       
+        Visitor mockVisitor = Mockito.mock(Visitor.class);
+        when(mockVisitor.getVisitorType(1)).thenCallRealMethod();
+        Assert.assertEquals("Student", mockVisitor.getVisitorType(1));
+
     }
 
     /**
      * Test of getVisitorNum method, of class Visitor.
+     * To test when the argument is 1, the visitor number should be 1 as well.
      */
     @Test
     public void testGetVisitorNum() {
         System.out.println("getVisitorNum");
-        Visitor instance = null;
-        int expResult = 0;
-        int result = instance.getVisitorNum();
-        assertEquals(expResult, result);
-     
+        Visitor mockVisitor = Mockito.mock(Visitor.class);
+        when(mockVisitor.getVisitorNum(1)).thenCallRealMethod();
+        Assert.assertEquals(1, mockVisitor.getVisitorNum(1));
+
     }
 
     /**
@@ -69,12 +47,23 @@ public class VisitorTest {
      */
     @Test
     public void testGetCurrentVisitorInfo() {
-        System.out.println("getCurrentVisitorInfo");
-        Visitor instance = null;
-        String expResult = "";
-        String result = instance.getCurrentVisitorInfo();
-        assertEquals(expResult, result);
-        
+
+        Visitor mockVisitor = Mockito.mock(Visitor.class);
+
+        when(mockVisitor.getVisitorType(1)).thenReturn("Student");
+        when(mockVisitor.getVisitorNum(1)).thenReturn(1);
+
+        when(mockVisitor.getRandomLocation()).thenReturn("The Cathedral of Learning", "Leave");
+
+        when(mockVisitor.getCurrentVisitorInfo()).thenCallRealMethod();
+
+        String expResult = "Visitor 1 is a Student.\n"
+                + "Visitor 1 is going to The Cathedral of Learning.\n"
+                + "Visitor 1 did not like The Cathedral of Learning.\n"
+                + "Visitor 1 has left the city.";
+
+        Assert.assertEquals(expResult, mockVisitor.getCurrentVisitorInfo());
+
     }
-    
+
 }
