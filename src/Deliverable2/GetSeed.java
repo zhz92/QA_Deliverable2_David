@@ -2,7 +2,7 @@ package Deliverable2;
 
 public class GetSeed {
 
-    public static int seed;
+    private static int seed;
 
     public int setSeed(int seed) {
         this.seed = seed;

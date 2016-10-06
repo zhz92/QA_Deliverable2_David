@@ -4,21 +4,22 @@ import java.util.Random;
 
 public class Location {
 
-    GetSeed get = new GetSeed();
+    Random random;
 
-    int seed = get.getSeed();
+    public Location(Random random) {
+        this.random = random;
 
-    Random random = new Random(seed);
-    
-    
+    }
+
+    public int getIdx() {
+        return random.nextInt(5);
+    }
 
     public String getRandomLocation() {
 
         String[] Locations = {"The Cathedral of Learning", "Squirrel Hill", "The Point", "Downtown", "Leave"};
 
-        int idx = random.nextInt(Locations.length);
-
-        String randomLocation = (Locations[idx]);
+        String randomLocation = Locations[getIdx()];
 
         String toReturn = randomLocation;
 

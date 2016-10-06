@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/davidzhang/NetBeansProjects/QA_Deliverable2_David/test/Deliverable2/ValidatorTest.java</file>
+            <file>file:/Users/davidzhang/NetBeansProjects/QA_Deliverable2_David/src/Deliverable2/Location.java</file>
             <file>file:/Users/davidzhang/NetBeansProjects/QA_Deliverable2_David/test/Deliverable2/VisitorTest.java</file>
             <file>file:/Users/davidzhang/NetBeansProjects/QA_Deliverable2_David/src/Deliverable2/Visitor.java</file>
+            <file>file:/Users/davidzhang/NetBeansProjects/QA_Deliverable2_David/test/Deliverable2/LocationTest.java</file>
         </group>
     </open-files>
 </project-private>

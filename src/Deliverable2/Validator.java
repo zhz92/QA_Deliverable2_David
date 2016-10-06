@@ -11,17 +11,17 @@ package Deliverable2;
  */
 public class Validator {
 
-    public boolean validateArguments(String[] inputArray) {
-        return validateNumberOfArguments(inputArray) && validateArgumentType(inputArray);
+    public boolean validateArguments(String[] args) {
+        return validateNumberOfArguments(args) && validateArgumentType(args);
     }
 
-    public boolean validateNumberOfArguments(String[] inputArray) {
-        return inputArray.length == 3;
+    public boolean validateNumberOfArguments(String[] args) {
+        return args.length == 1;
     }
 
-    public boolean validateArgumentType(String[] inputArray) {
+    public boolean validateArgumentType(String[] args) {
         try {
-            Integer.parseInt(inputArray[2]);
+            Integer.parseInt(args[0]);
             return true;
         } catch (Exception e) {
             return false;

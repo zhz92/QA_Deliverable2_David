@@ -19,29 +19,28 @@ public class ValidatorTest {
 
     @Test
     public void ifOneArgumentIsProvidedReturnTrue() {
-        Assert.assertTrue(new Validator().validateNumberOfArguments(new String[]{"java", "CitySim9002", "1"}));
+        Assert.assertTrue(new Validator().validateNumberOfArguments(new String[]{"1"}));
     }
 
     @Test
     public void ifOneArgumentIsNotProvidedReturnFalse() {
-        Assert.assertFalse(new Validator().validateNumberOfArguments(new String[]{"java", "CitySim9002", "1", "2"}));
+        Assert.assertFalse(new Validator().validateNumberOfArguments(new String[]{"1", "2"}));
     }
 
     @Test
     public void ifArgumentIsAnIntegerReturnTrue() {
-        Assert.assertTrue(new Validator().validateArgumentType(new String[]{"java", "CitySim9002", "1"}));
+        Assert.assertTrue(new Validator().validateArgumentType(new String[]{"1"}));
     }
 
     @Test
     public void ifArgumentIsNotAnIntegerReturnFalse() {
-        Assert.assertFalse(new Validator().validateArgumentType(new String[]{"java", "CitySim9002", "test"}));
+        Assert.assertFalse(new Validator().validateArgumentType(new String[]{ "test"}));
     }
 
     /**
      *
-     * @author davidzhang
-     * When the length of argument and the type of argument are correct,
-     * to test if the argument is valid. Should be valid.
+     * @author davidzhang When the length of argument and the type of argument
+     * are correct, to test if the argument is valid. Should be valid.
      */
     @Test
     public void ifArgumentLengthAndArgumentTypeIsCorrect() {

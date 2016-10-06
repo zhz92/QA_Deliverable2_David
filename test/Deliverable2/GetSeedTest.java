@@ -29,9 +29,8 @@ public class GetSeedTest {
     }
 
     /**
-     * Test of getSeed method, of class GetSeed.
-     * To give the setSeed method a value, and check
-     * if the getSeed method can return the same value.
+     * Test of getSeed method, of class GetSeed. To give the setSeed method a
+     * value, and check if the getSeed method can return the same value.
      */
     @Test
     public void testGetSeed() {

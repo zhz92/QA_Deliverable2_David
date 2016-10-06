@@ -2,7 +2,7 @@ package Deliverable2;
 
 public class Visitor {
 
-    private Location _location = new Location();
+    public Location _location;
     int i = 1;
 
     public String getVisitorType(int i) {
@@ -88,7 +88,7 @@ public class Visitor {
              */
             randomLocation = getRandomLocation();
 
-        } while (randomLocation != "Leave");
+        } while (!"Leave".equals(randomLocation));
 
         String leaveCity = "Visitor " + getVisitorNum(i) + " has left the city.";
 

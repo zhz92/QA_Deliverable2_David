@@ -3,11 +3,10 @@ package Deliverable2;
 public class Game {
 
     private Visitor _visitor = null;
-    private Location _location = null;
 
-    public Game(Visitor v, Location l) {
+    public Game(Visitor v) {
         this._visitor = v;
-        this._location = l;
+
     }
 
     public void run() {
