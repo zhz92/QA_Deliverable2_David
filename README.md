@@ -11,6 +11,6 @@ During this practice, there are a few issues that I met and trying to firgure ou
 
 2. I was trying to use dependency injection in my code to make the program more extensible and testable. However, as a junior programmer, it is a little bit difficult to apply this technology due to the abstraction and hard to understand. But finally, I was able to apply dependency injection in my random number generator.
 
-3. One of the test, called VisitorTest.java, I got failure in the test of its method, getCurrentVisitorInfo. The test result indicates that java.lang.nullpointerexception. 
+3. One of the test, called VisitorTest.java, I got failure in the test of its method, getCurrentVisitorInfo. The test result indicates that java.lang.nullpointerexception. After talking to instrutor, I change the test code to when(mockVisitor.getVisitorType(any(int.class))).thenReturn("Blogger"), then works well; Looks like if the mockVisitor.getVisitorType(1) does not mock for each iteration.
 
 Finally, I want to thank my instructor Dustin Iser for your hard working. Thank you for looking at my code piece by piece and sending me feedback in the middle of night. There is no execuse for me not to learn hard. Really appreciate you help on this. 
