@@ -40,8 +40,6 @@ public class CitySim9002 {
                 System.out.println("Argument is null!");
             }
 
-            System.out.println("Simulation Completed! ");
-
         } else {
             System.out.println(errorMessage);
 

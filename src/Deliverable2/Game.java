@@ -9,7 +9,7 @@ public class Game {
 
     }
 
-    public void run() {
+    public int run() {
 
         int i = 1;
         while (i <= 5) {
@@ -18,6 +18,7 @@ public class Game {
             System.out.println("***");
             i++;
         }
+        return i;
 
     }
 

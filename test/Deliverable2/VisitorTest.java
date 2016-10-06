@@ -23,7 +23,6 @@ public class VisitorTest {
      */
     @Test
     public void testGetVisitorType() {
-        System.out.println("getVisitorType");
         Visitor mockVisitor = Mockito.mock(Visitor.class);
         when(mockVisitor.getVisitorType(1)).thenCallRealMethod();
         Assert.assertEquals("Student", mockVisitor.getVisitorType(1));
@@ -36,7 +35,6 @@ public class VisitorTest {
      */
     @Test
     public void testGetVisitorNumReturnCorrectly() {
-        System.out.println("getVisitorNum");
         Visitor mockVisitor = Mockito.mock(Visitor.class);
         when(mockVisitor.getVisitorNum(1)).thenCallRealMethod();
         Assert.assertEquals(1, mockVisitor.getVisitorNum(1));
@@ -45,11 +43,11 @@ public class VisitorTest {
 
     /**
      * Test of getVisitorNum method, of class Visitor. The visitors are numbered
-     * from 1 to 5, thus can not return a number bigger than 5.
+     * from 1 to 5, thus can not return a number bigger than 5. If it is bigger,
+     * should return 0;
      */
     @Test
     public void testGetVisitorNumBigger() {
-        System.out.println("getVisitorNum");
         Visitor mockVisitor = Mockito.mock(Visitor.class);
         when(mockVisitor.getVisitorNum(6)).thenCallRealMethod();
         Assert.assertEquals(0, mockVisitor.getVisitorNum(6));
@@ -58,11 +56,11 @@ public class VisitorTest {
 
     /**
      * Test of getVisitorNum method, of class Visitor. The visitors are numbered
-     * from 1 to 5, thus can not return a number smaller than 1.
+     * from 1 to 5, thus can not return a number smaller than 1. If it is
+     * smaller, should return 0.
      */
     @Test
     public void testGetVisitorNumSmaller() {
-        System.out.println("getVisitorNum");
         Visitor mockVisitor = Mockito.mock(Visitor.class);
         when(mockVisitor.getVisitorNum(0)).thenCallRealMethod();
         Assert.assertEquals(0, mockVisitor.getVisitorNum(0));
