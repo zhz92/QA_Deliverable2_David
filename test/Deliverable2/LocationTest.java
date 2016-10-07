@@ -24,12 +24,25 @@ public class LocationTest {
     /**
      * Test of getIdx method, of class Location. There are only five choices,
      * four locations and leave the city. Thus the random number generator can
-     * only get random number from 0 to 4, can not return 5 for example;
+     * only get random number from 0 to 4, can not return bigger than 4;
      */
     @Test
-    public void testGetIdxBeyondtheScope() {
+    public void testGetIdxBigger() {
         Random mockRandom = mock(Random.class);
         when(mockRandom.nextInt(any(Integer.class))).thenReturn(5);
+        Assert.assertNotEquals(4, new Location(mockRandom).getIdx());
+
+    }
+
+    /**
+     * Test of getIdx method, of class Location. There are only five choices,
+     * four locations and leave the city. Thus the random number generator can
+     * only get random number from 0 to 4, can not return smaller than 0;
+     */
+    @Test
+    public void testGetIdxSmaller() {
+        Random mockRandom = mock(Random.class);
+        when(mockRandom.nextInt(any(Integer.class))).thenReturn(-1);
         Assert.assertNotEquals(4, new Location(mockRandom).getIdx());
 
     }
@@ -48,9 +61,10 @@ public class LocationTest {
     }
 
     /**
-     * Test of getRandomLocation method, of class Location. The four locations
-     * and leave the city should have equal weight. Thus the random location
-     * should be any one of the five choices.
+     * Test of getRandomLocation method, of class Location. The random location
+     * should be generated base on the random index. String[] Locations = {"The
+     * Cathedral of Learning", "Squirrel Hill", "The Point", "Downtown",
+     * "Leave"};
      */
     @Test
     public void testGetRandomLocationReturnsCorrect() {

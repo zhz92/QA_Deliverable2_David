@@ -34,7 +34,7 @@ public class ValidatorTest {
 
     @Test
     public void ifArgumentIsNotAnIntegerReturnFalse() {
-        Assert.assertFalse(new Validator().validateArgumentType(new String[]{ "test"}));
+        Assert.assertFalse(new Validator().validateArgumentType(new String[]{"test"}));
     }
 
     /**

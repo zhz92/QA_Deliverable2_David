@@ -18,20 +18,30 @@ import static org.mockito.Mockito.when;
 public class VisitorTest {
 
     /**
-     * Test of getVisitorType method, of class Visitor. To test when the
-     * argument starts with 1, the visitor should be a student.
+     * Test of getVisitorType method, of class Visitor. Each visitor should
+     * traverse the city one by one. Thus, the first should be Student, second
+     * is Business Person, third is Professor, fourth is Student, fifth is
+     * Blogger.
      */
     @Test
     public void testGetVisitorType() {
         Visitor mockVisitor = Mockito.mock(Visitor.class);
         when(mockVisitor.getVisitorType(1)).thenCallRealMethod();
         Assert.assertEquals("Student", mockVisitor.getVisitorType(1));
+        when(mockVisitor.getVisitorType(2)).thenCallRealMethod();
+        Assert.assertEquals("Business Person", mockVisitor.getVisitorType(2));
+        when(mockVisitor.getVisitorType(3)).thenCallRealMethod();
+        Assert.assertEquals("Professor", mockVisitor.getVisitorType(3));
+        when(mockVisitor.getVisitorType(4)).thenCallRealMethod();
+        Assert.assertEquals("Student", mockVisitor.getVisitorType(4));
+        when(mockVisitor.getVisitorType(5)).thenCallRealMethod();
+        Assert.assertEquals("Blogger", mockVisitor.getVisitorType(5));
 
     }
 
     /**
      * Test of getVisitorNum method, of class Visitor. To test when the argument
-     * is 1, the visitor number should be 1 as well.
+     * is 1, the visitor number should return 1 as well.
      */
     @Test
     public void testGetVisitorNumReturnCorrectly() {

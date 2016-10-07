@@ -22,7 +22,6 @@ public class GetSeedTest {
      */
     @Test
     public void testSetSeed() {
-
         GetSeed mockGetSeed = mock(GetSeed.class);
         when(mockGetSeed.setSeed(1)).thenCallRealMethod();
         Assert.assertEquals(1, mockGetSeed.setSeed(1));
@@ -35,8 +34,8 @@ public class GetSeedTest {
     @Test
     public void testGetSeed() {
         GetSeed mockGetSeed = mock(GetSeed.class);
-        when(mockGetSeed.getSeed()).thenReturn(1);
-        Assert.assertEquals(1, mockGetSeed.getSeed());
+        when(mockGetSeed.getSeed()).thenCallRealMethod();
+        Assert.assertEquals(0, mockGetSeed.getSeed());
 
     }
 
