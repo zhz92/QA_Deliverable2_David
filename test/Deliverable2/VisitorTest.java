@@ -20,8 +20,7 @@ public class VisitorTest {
     /**
      * Test of getVisitorType method, of class Visitor. Each visitor should
      * traverse the city one by one. Thus, the first should be Student, second
-     * is Business Person, third is Professor, fourth is Student, fifth is
-     * Blogger.
+     * is Business Person, third is Professor, fourth is Student, fifth is Blogger.
      */
     @Test
     public void testGetVisitorType() {
